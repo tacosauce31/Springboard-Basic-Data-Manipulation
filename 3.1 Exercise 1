@@ -1,0 +1,31 @@
+---
+title: "3.1 Exercise 1"
+author: "David Aragon"
+date: "January 30, 2018"
+output: html_document
+---
+
+###3.1 Exercise 1
+
+#### Load Data
+Imported data into R Studio and changed file to "refine_orginial" and saved as a csv file. 
+```{r}
+library(readr)
+refine_original <- read_csv("refine_original.csv")
+
+```
+
+####Lowered cased all data in under company column
+```{r}
+refine_original$company <- tolower(refine_original$company)
+```
+
+####Separating two columns product_code and product_number into two new columns
+```{r}
+library(tidyr)
+mydata <- separate(refine_original,
+                   col = "Product code / number",
+                   into = c("Product code", "Product Name"), 
+                   sep = "-")
+```
+
