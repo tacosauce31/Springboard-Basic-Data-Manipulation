@@ -10,6 +10,7 @@ output: html_document
 #### Load Data
 Imported data into R Studio and changed file to "refine_orginial" and saved as a csv file. 
 
+
 ```r
 library(readr)
 refine_original <- read_csv("refine_original.csv")

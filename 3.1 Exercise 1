@@ -1,26 +1,18 @@
 ---
-title: "3.1 Exercise 1"
-author: "David Aragon"
-date: "January 30, 2018"
-output: html_document
+title: "R Notebook"
+output: html_notebook
 ---
 
-###3.1 Exercise 1
+###Import Data
+Imported data into R Studio and changed file to "refine_orginial" and saved as a csv file.
 
-#### Load Data
-Imported data into R Studio and changed file to "refine_orginial" and saved as a csv file. 
-```{r}
-library(readr)
-refine_original <- read_csv("refine_original.csv")
-
-```
-
-####Lowered cased all data in under company column
+### Lowered case for all variables in Company column
 ```{r}
 refine_original$company <- tolower(refine_original$company)
+
 ```
 
-####Separating two columns product_code and product_number into two new columns
+### Seperated column Product code/number into two seperate columns
 ```{r}
 library(tidyr)
 mydata <- separate(refine_original,
@@ -29,3 +21,9 @@ mydata <- separate(refine_original,
                    sep = "-")
 ```
 
+### 
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
