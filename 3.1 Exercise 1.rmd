@@ -1,0 +1,34 @@
+---
+title: "3.1 Exercise 1"
+author: "David Aragon"
+date: "February 5, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Import Data
+
+Imported data in R studio and changed file to "refine_original" and saved as a CSV file. 
+
+## Lowered case in all instances of Company
+
+
+```{r}
+refine_original$company <- tolower(refine_original$company)
+
+```
+
+##Seperate column Product code/number into two seperate columns
+
+```{r}
+library(tidyr)
+mydata <- separate(refine_original,
+                   col = "Product code / number",
+                   into = c("Product code", "Product Name"), 
+                   sep = "-")
+```
+
+## 

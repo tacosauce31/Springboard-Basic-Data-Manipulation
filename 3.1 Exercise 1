@@ -1,29 +1,30 @@
 ---
-title: "R Notebook"
-output: html_notebook
+title: "3.1 Exercise 1"
+author: "David Aragon"
+date: "February 5, 2018"
+output: html_document
 ---
 
-###Import Data
-Imported data into R Studio and changed file to "refine_orginial" and saved as a csv file.
-
-### Lowered case for all variables in Company column
-```{r}
-refine_original$company <- tolower(refine_original$company)
-
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Seperated column Product code/number into two seperate columns
-```{r}
-library(tidyr)
-mydata <- separate(refine_original,
-                   col = "Product code / number",
-                   into = c("Product code", "Product Name"), 
-                   sep = "-")
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
 ```
 
-### 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+## Including Plots
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+You can also embed plots, for example:
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
